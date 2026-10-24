@@ -4,7 +4,10 @@ import pickle
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 
-model=load_model('models/next_word_lstm.h5')
+model = load_model(
+    'models/next_word_lstm.h5',
+    compile=False
+)
 
 with open('models/tokenizer.pickle','rb') as handle:
     tokenizer = pickle.load(handle)
