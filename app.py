@@ -4,22 +4,7 @@ import pickle
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 
-# Compatibility workaround for older LSTM models
-from keras.layers import LSTM
-
-original_from_config = LSTM.from_config.__func__
-
-@classmethod
-def compatible_from_config(cls, config):
-    config.pop("time_major", None)
-    return original_from_config(cls, config)
-
-LSTM.from_config = compatible_from_config
-
-model = load_model(
-    "models/next_word_lstm.h5",
-    compile=False
-)
+model = load_model("models/next_word_lstm.h5")
 
 with open('models/tokenizer.pickle','rb') as handle:
     tokenizer = pickle.load(handle)
