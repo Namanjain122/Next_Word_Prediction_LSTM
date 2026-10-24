@@ -1,5 +1,7 @@
 # Next Word Prediction with LSTM
 
+Live Link :- https://nextwordpredictionlstmgit-45iplczajfavjp7ah7lclp.streamlit.app/
+
 This project trains a recurrent neural network to predict one likely next word from a sequence of words. The training corpus is Shakespeare's *Hamlet* from the NLTK Gutenberg collection. A Streamlit application loads the trained model and tokenizer so you can try predictions in a browser.
 
 ## Project at a glance
