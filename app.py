@@ -12,6 +12,7 @@ model = load_model(
 with open('models/tokenizer.pickle','rb') as handle:
     tokenizer = pickle.load(handle)
 
+
 # Function to predict the next word
 def predict_next_word(model, tokenizer, text, max_sequence_len):
     token_list = tokenizer.texts_to_sequences([text])[0]
